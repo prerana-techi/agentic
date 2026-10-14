@@ -1429,12 +1429,12 @@ export default function Home() {
                 </h4>
                 <pre style={{ background: '#0a0d14', padding: '16px', borderRadius: '8px', border: '1px solid var(--border-glass)', fontSize: '0.8rem', color: '#a5f3fc', overflowX: 'auto' }}>
 {`# 1. Probe for HTTP 402 challenge
-curl -i -X POST https://nexus402.agentic/api/x402/query \\
+curl -i -X POST https://nexus402.netlify.app/api/x402/query \\
   -H "Content-Type: application/json" \\
   -d '{"query": "Audit Base Sepolia Vault 0x402...", "tier": "deep"}'
 
 # 2. Settle on Base Sepolia & Submit Proof
-curl -X POST https://nexus402.agentic/api/x402/query \\
+curl -X POST https://nexus402.netlify.app/api/x402/query \\
   -H "Content-Type: application/json" \\
   -H "X-402-Payment-Proof: txHash=0x9a8f...; payerAddress=0x7099...; invoiceId=inv_172832"`}
                 </pre>
