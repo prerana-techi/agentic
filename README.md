@@ -3,14 +3,14 @@
 > **Built for [Rise In: Agentmaxxing](https://www.risein.com) (Build. Experiment. Ship.)**  
 > *Target Ecosystem: Base Sepolia Testnet (ChainID: 84532) | Standard: HTTP 402 Micropayments*
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/deploy-status)](https://nexus402.netlify.app)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Netlify-00AD9F?style=for-the-badge&logo=netlify&logoColor=white)](https://nexus402.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/deploy-status)](https://courageous-arithmetic-cef997.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Netlify-00AD9F?style=for-the-badge&logo=netlify&logoColor=white)](https://courageous-arithmetic-cef997.netlify.app/)
 [![Base Sepolia](https://img.shields.io/badge/Base_Sepolia-84532-0052FF?style=for-the-badge&logo=coinbase&logoColor=white)](https://sepolia.basescan.org)
 [![Rise In](https://img.shields.io/badge/Rise_In-Week_2_Ship-00F5D4?style=for-the-badge)](https://www.risein.com)
 
 ---
 
-🚀 **Live Netlify App:** [https://nexus402.netlify.app](https://nexus402.netlify.app)  
+🚀 **Live Netlify App:** [https://courageous-arithmetic-cef997.netlify.app/](https://courageous-arithmetic-cef997.netlify.app/)  
 📦 **GitHub Repository:** [https://github.com/prerana-techi/agentic](https://github.com/prerana-techi/agentic)  
 ⚡ **Contract & Agent Wallet:** [`0x84532B07eCe33dA2708bDa90a36e9B137Ec7402F`](https://sepolia.basescan.org/address/0x84532B07eCe33dA2708bDa90a36e9B137Ec7402F)
 
@@ -111,7 +111,7 @@ sequenceDiagram
 
 ### 🌐 Live Production Deployment
 Experience the deployed agent directly on Netlify:  
-👉 **[https://nexus402.netlify.app](https://nexus402.netlify.app)**
+👉 **[https://courageous-arithmetic-cef997.netlify.app/](https://courageous-arithmetic-cef997.netlify.app/)**
 
 ### 💻 Local Development Setup
 
@@ -128,7 +128,7 @@ npm install
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) or [https://nexus402.netlify.app](https://nexus402.netlify.app) in your browser.
+Open [http://localhost:3000](http://localhost:3000) or [https://courageous-arithmetic-cef997.netlify.app/](https://courageous-arithmetic-cef997.netlify.app/) in your browser.
 
 ---
 
@@ -137,7 +137,7 @@ Open [http://localhost:3000](http://localhost:3000) or [https://nexus402.netlify
 ### 1. Step 1: Probe the Endpoint (Trigger 402 Challenge)
 ```bash
 # Production Endpoint (Netlify):
-curl -i -X POST https://nexus402.netlify.app/api/x402/query \
+curl -i -X POST https://courageous-arithmetic-cef997.netlify.app/api/x402/query \
   -H "Content-Type: application/json" \
   -d '{"query": "Audit Base Sepolia Vault invariants", "tier": "deep"}'
 
@@ -158,7 +158,7 @@ X-402-Amount-Eth: 0.0008
 ### 2. Step 2: Pay on Base Sepolia & Fulfill Query
 ```bash
 # Production Endpoint (Netlify):
-curl -X POST https://nexus402.netlify.app/api/x402/query \
+curl -X POST https://courageous-arithmetic-cef997.netlify.app/api/x402/query \
   -H "Content-Type: application/json" \
   -H "X-402-Payment-Proof: txHash=0x9a8f...; payerAddress=0x7099...; invoiceId=inv_1791392974547_xx6yw8w" \
   -d '{"query": "Audit Base Sepolia Vault invariants", "tier": "deep"}'
