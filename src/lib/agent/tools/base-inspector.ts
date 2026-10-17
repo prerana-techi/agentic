@@ -20,7 +20,7 @@ export class BaseSepoliaInspector {
     const gasPriceGwei = (0.0015 + (Math.random() * 0.003)).toFixed(4);
 
     return {
-      chainId: 84532,
+      chainId: BASE_SEPOLIA_CHAIN_ID,
       networkName: 'Base Sepolia Testnet',
       latestBlock,
       gasPriceGwei,

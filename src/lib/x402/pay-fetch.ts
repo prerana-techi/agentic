@@ -2,7 +2,7 @@
  * payAndFetch helper implementation
  * Handles the HTTP 402 challenge-response handshake automatically for autonomous agents
  */
-export async function payAndFetch(url: string, options: RequestInit = {}): Promise<any> {
+export async function payAndFetch(url: string, options: RequestInit = {}): Promise<unknown> {
   // Step 1: Send initial probe request
   const initialRes = await fetch(url, options);
 

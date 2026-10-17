@@ -118,14 +118,12 @@ export class X402Protocol {
     let txHash = '';
     let payerAddress = '';
     let invoiceId = '';
-    let isSimulated = false;
 
     // Check body proof first if passed
     if (bodyPaymentProof && bodyPaymentProof.txHash) {
       txHash = bodyPaymentProof.txHash;
       payerAddress = bodyPaymentProof.payerAddress || '0x71C...aB42';
       invoiceId = bodyPaymentProof.invoiceId || `inv_${Date.now()}`;
-      isSimulated = !!bodyPaymentProof.simulated;
     } else if (proofHeader) {
       // Parse header string: "txHash=0x...; payerAddress=0x...; invoiceId=inv_..."
       const parts = proofHeader.split(';').map((s) => s.trim());
@@ -134,7 +132,6 @@ export class X402Protocol {
         if (k === 'txHash') txHash = v;
         if (k === 'payerAddress') payerAddress = v;
         if (k === 'invoiceId') invoiceId = v;
-        if (k === 'simulated') isSimulated = v === 'true';
       }
     }
 

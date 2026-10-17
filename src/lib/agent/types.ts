@@ -36,6 +36,7 @@ export interface StepLog {
   type: 'PAYMENT_VERIFIED' | 'PLANNING' | 'TOOL_CALL' | 'SUBAGENT_DELEGATED' | 'ONCHAIN_ACTION' | 'SYNTHESIS';
   title: string;
   detail: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   metadata?: Record<string, any>;
   costEth?: string;
 }

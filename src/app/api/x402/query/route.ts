@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { X402Protocol, SERVICE_TIERS } from '@/lib/x402/protocol';
+import { X402Protocol } from '@/lib/x402/protocol';
 import { AgentCore } from '@/lib/agent/agent-core';
 import { QueryTier } from '@/lib/agent/types';
 
@@ -58,12 +58,13 @@ export async function POST(req: NextRequest) {
         },
       }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error handling x402 query:', error);
+    const message = error instanceof Error ? error.message : 'Failed to process agent request';
     return NextResponse.json(
       {
         error: 'Internal Agentic Pipeline Error',
-        message: error?.message || 'Failed to process agent request',
+        message,
       },
       { status: 500 }
     );

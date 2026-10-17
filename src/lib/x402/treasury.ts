@@ -3,7 +3,7 @@ import { AGENT_WALLET_ADDRESS, BASE_SEPOLIA_CHAIN_ID, BASE_SEPOLIA_EXPLORER } fr
 
 // Initial state for the agent's autonomous wallet & treasury
 let treasuryBalanceEth = 0.0485;
-let treasuryBalanceUsdc = 210.5;
+const treasuryBalanceUsdc = 210.5;
 let totalQueriesProcessed = 19;
 let totalRevenueEth = 0.0248;
 

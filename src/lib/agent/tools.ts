@@ -9,6 +9,7 @@ export interface ToolDefinition {
     properties: Record<string, { type: string; description: string }>;
     required?: string[];
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   run: (args: any, context?: { baseUrl?: string }) => Promise<any>;
 }
 
@@ -67,8 +68,8 @@ export const tools: ToolDefinition[] = [
           subregion: data.subregion,
           currencies: data.currencies ? Object.keys(data.currencies).join(', ') : 'N/A',
         };
-      } catch (err: any) {
-        return { error: `Could not retrieve information for '${country}'.`, details: err.message };
+      } catch (err: unknown) {
+        return { error: `Could not retrieve information for '${country}'.`, details: err instanceof Error ? err.message : String(err) };
       }
     },
   },

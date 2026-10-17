@@ -8,7 +8,7 @@ import { SERVICE_TIERS } from '../x402/protocol';
 import { AgentTreasury } from '../x402/treasury';
 import { BaseSepoliaInspector } from './tools/base-inspector';
 import { WebIntelligenceTool } from './tools/web-intelligence';
-import { ContractAuditorTool } from './tools/contract-auditor';
+import { ContractAuditorTool, AuditReport } from './tools/contract-auditor';
 import { SubAgentDelegatorTool } from './tools/subagent-delegator';
 import { AgentMemory } from './memory';
 
@@ -95,7 +95,7 @@ export class AgentCore {
     });
 
     // 5. Tool Execution: Deep Tier / Contract Auditor if applicable
-    let auditReport: any = null;
+    let auditReport: AuditReport | null = null;
     if (tierId === 'deep' || tierId === 'multi_agent') {
       auditReport = await ContractAuditorTool.analyze(query);
       stepLogs.push({
